@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PreviewBook</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'bundle' %>
+    <script type="text/javascript">
+       function processBarcode(b){
+         var d = document.createElement("div");
+         d.innerHTML = b;
+         document.body.appendChild(d);
+       }
+     </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
