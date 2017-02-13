@@ -6,6 +6,7 @@
   "author": "nasum <tomato.wonder.life@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "postinstall": "webpack -p",
     "dev": "webpack -d --color --watch --display-error-details",
     "dist": "webpack -p"
   },
