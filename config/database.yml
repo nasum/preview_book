@@ -33,6 +33,7 @@ test:
 
 production:
   <<: *default
+  host: <%= ENV['PREVIEW_BOOK_DATABASE_HOST'] %>
   database: <%= ENV['PREVIEW_BOOK_DATABASE_NAME'] %>
   username: <%= ENV['PREVIEW_BOOK_DATABASE_USER_NAME'] %>
   password: <%= ENV['PREVIEW_BOOK_DATABASE_PASSWORD'] %>
