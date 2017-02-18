@@ -85,7 +85,7 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
-    openbd_api (0.4.1)
+    openbd_api (0.4.5)
       faraday (~> 0.11)
       faraday_middleware (~> 0.11)
       slop (~> 4.4)

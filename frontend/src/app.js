@@ -30,9 +30,10 @@ $(document).ready(function(){
   }
 
   function processBarcode(b){
-    var d = document.createElement("div");
-    d.innerHTML = b;
-    document.body.appendChild(d);
+    $('.isbn').emtpy().text(b.isbn)
+    $('.title').emtpy().text(b.title)
+    $('.img img').attr('').attr(b.cover)
+    $('.author').emtpy().text(b.author)
   }
 
   $('.scan').click(function(){
