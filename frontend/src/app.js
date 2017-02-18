@@ -30,10 +30,18 @@ $(document).ready(function(){
   }
 
   function processBarcode(b){
-    $('.isbn').emtpy().text(b.isbn)
-    $('.title').emtpy().text(b.title)
-    $('.img img').attr('').attr(b.cover)
-    $('.author').emtpy().text(b.author)
+    $.ajax({
+      url: "/book",
+      type: 'GET',
+      data: {
+        isbn: b
+      }
+    }).done((data) => {
+      $('.isbn').emtpy().text(data.isbn)
+      $('.title').emtpy().text(data.title)
+      $('.img img').attr('').attr(data.cover)
+      $('.author').emtpy().text(data.author)
+    })
   }
 
   $('.scan').click(function(){
