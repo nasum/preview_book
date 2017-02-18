@@ -28,7 +28,6 @@ $(document).ready(function(){
     window.addEventListener("storage", zxinglistener, false);
     var zxingWindow = window.open("zxing://scan/?ret=" + encodeURIComponent(href + "#{CODE}"),'_self');
   }
-
   function processBarcode(b){
     $.ajax({
       url: "/book",
@@ -37,14 +36,16 @@ $(document).ready(function(){
         isbn: b
       }
     }).done((data) => {
-      $('.isbn').emtpy().text(data.isbn)
-      $('.title').emtpy().text(data.title)
-      $('.img img').attr('').attr(data.cover)
-      $('.author').emtpy().text(data.author)
+      $('.isbn').empty().text(data.isbn)
+      $('.title').empty().text(data.title)
+      $('.img img').attr('src','').attr('src',data.cover)
+      $('.author').empty().text(data.author)
     })
   }
 
   $('.scan').click(function(){
     getScan();
   })
+
+  processBarcode(9784047344174)
 })
